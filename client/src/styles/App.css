@@ -1,0 +1,65 @@
+/* styles/App.css */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.main {
+  flex: 1 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 3rem;
+  }
+}
+/* styles/App.css */
+
+/* ... (existing styles) ... */
+
+/* Add styles for Admin and Client pages */
+.admin-page,
+.client-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafb;
+  text-align: center;
+  padding: 2rem;
+}
+
+.admin-page h1,
+.client-page h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.admin-page p,
+.client-page p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.admin-page a,
+.client-page a {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.admin-page a:hover,
+.client-page a:hover {
+  color: #a855f7;
+}

@@ -1,0 +1,136 @@
+/* styles/ReportForm.css */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap");
+
+/* Report Form Section */
+.report-form {
+  padding: 4rem 1rem;
+  background: #f9fafb;
+  text-align: center;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 768px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Heading */
+.form-container h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* Form Styling */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Labels */
+.form-group label {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+/* Select and Textarea Inputs */
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Focus and Hover States for Select and Textarea */
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #a855f7;
+}
+
+/* Placeholder Styling for Textarea */
+.form-group textarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+.submit-button {
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(90deg, #3b82f6, #a855f7);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    background: linear-gradient(90deg, #a855f7, #3b82f6);
+  }
+  
+  .submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+  }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .report-form {
+    padding: 2rem 0.5rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .form-container h2 {
+    font-size: 2rem;
+  }
+
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

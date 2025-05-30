@@ -1,0 +1,176 @@
+/* styles/Report.css */
+.report-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Reuse Hero Styles from Home.css for consistency */
+.report-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4f46e5, #a855f7);
+  position: relative;
+  overflow: hidden;
+}
+
+.report-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
+  animation: pulse 10s infinite;
+}
+
+.report-hero .hero-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.report-hero .hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #d1d5db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.report-hero .hero-subtitle {
+  font-size: 1.25rem;
+  color: #e5e7eb;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Report Form Section */
+.report-form-section {
+  padding: 4rem 1rem;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.report-form {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.form-submit-button {
+  padding: 0.75rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+}
+
+/* Progress Bar Section */
+.progress-bar-section {
+  padding: 2rem 1rem;
+  background: #ffffff;
+  text-align: center;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.progress-step {
+  flex: 1;
+  padding: 0.75rem;
+  background: #e5e7eb;
+  color: #4b5563;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .report-hero .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .report-hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .report-form-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .progress-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
