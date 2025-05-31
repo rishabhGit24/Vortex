@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@400;500&display=swap");
+
+body {
+  font-family: "Roboto", "Segoe UI", -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+.admin-portal,
+.client-portal {
+  min-height: 100vh;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.portal-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #1e3a8a, #d97706);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  background: rgba(254, 226, 226, 0.9);
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  border: 1px solid rgba(185, 28, 28, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #d97706;
+  padding-bottom: 0.75rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.companies-section,
+.complaints-section,
+.complaint-details-section {
+  margin-bottom: 3rem;
+}
+
+.companies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.company-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.company-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: #d97706;
+}
+
+.company-card:hover::before {
+  opacity: 1;
+}
+
+.company-card.selected {
+  background: rgba(30, 58, 138, 0.3);
+  border-color: #d97706;
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+}
+
+.company-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.company-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  color: #d97706;
+  transition: transform 0.3s ease;
+}
+
+.company-card:hover .company-icon {
+  transform: scale(1.1);
+}
+
+.company-card.selected .company-icon {
+  color: #ffffff;
+}
+
+.arrow-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.company-card.selected .arrow-icon {
+  color: #d97706;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.company-summary {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.summary-section h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #d97706;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.summary-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.frequency-tag {
+  background: rgba(59, 130, 246, 0.2);
+  color: #ffffff;
+  border: 1px solid #3b82f6;
+}
+
+.frequency-tag:hover {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.abuse-tag {
+  background: rgba(217, 119, 6, 0.2);
+  color: #ffffff;
+  border: 1px solid #d97706;
+}
+
+.abuse-tag:hover {
+  background: #d97706;
+  color: #ffffff;
+}
+
+.summary-section p {
+  font-size: 0.875rem;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.complaint-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.complaint-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: #d97706;
+}
+
+.complaint-card.selected {
+  background: rgba(30, 58, 138, 0.3);
+  border-color: #d97706;
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+}
+
+.complaint-card p {
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.complaint-card p strong {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.complaint-card.selected p strong {
+  color: #ffffff;
+}
+
+.complaint-details-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+.complaint-details-card p {
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.complaint-details-card p strong {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.no-data {
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .admin-portal,
+  .client-portal {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .portal-title {
+    font-size: 2.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .company-header {
+    font-size: 1.25rem;
+  }
+
+  .summary-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .company-card,
+  .complaint-card,
+  .complaint-details-card {
+    padding: 1.5rem;
+  }
+}

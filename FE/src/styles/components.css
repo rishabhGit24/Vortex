@@ -1,0 +1,169 @@
+/* styles/components.css */
+
+/* Importing fonts for a polished look */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap");
+
+/* General Component Styles */
+.component-section {
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+header .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: #1e293b;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header nav a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+  background: linear-gradient(90deg, #1e3a8a 0%, #a855f7 100%);
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #d1d5db;
+}
+
+footer a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+/* Utility Classes for Other Components (e.g., FAQs, TrustSecurity, etc.) */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #4b5563;
+}
+
+/* Button Styles for Components */
+.component-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(90deg, #3b82f6, #a855f7);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+.component-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  header .container {
+    padding: 1rem;
+  }
+
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    gap: 1rem;
+  }
+
+  header nav a {
+    font-size: 0.875rem;
+  }
+
+  .component-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+}
